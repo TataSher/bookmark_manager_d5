@@ -1,6 +1,5 @@
 require_relative './setup_test_database.rb'
 # Set the environment to "test"
-ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
 
 # truncate database before each test
