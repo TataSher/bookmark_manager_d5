@@ -1,5 +1,7 @@
 require 'bookmarks.rb'
 require 'database_helper'
+require './lib/database_connection.rb'
+require 'spec_helper'
 
 describe Bookmarks do
   describe '.all' do
@@ -7,10 +9,9 @@ describe Bookmarks do
       connect = PG.connect(dbname: 'bookmark_manager_test')
 
       bookmark = Bookmarks.create(url:'http://www.makersacademy.com', title:"Makers")
-      persisted_data = persisted_data(id: bookmark.id)
         
       expect(bookmark).to be_a Bookmarks
-      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmark.id).to eq persisted_data(id: 'id')
       expect(bookmark.title).to eq 'Makers'
       expect(bookmark.url).to eq 'http://www.makersacademy.com'
 
@@ -23,7 +24,7 @@ describe Bookmarks do
       persisted_data = persisted_data(id: bookmark.id)
 
       expect(bookmark).to be_a Bookmarks
-      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmark.id).to eq persisted_data(id: 'id')
       expect(bookmark.title).to eq 'Makers'
       expect(bookmark.url).to eq 'http://www.makersacademy.com'
 	  end
@@ -51,7 +52,8 @@ describe Bookmarks do
 
   describe '.find' do
     it 'finds the requested bookmark' do
-      bookmark = Bookmarks.create(url:'http://www.makersacademy.com', title:"Makers")
+      bookmark = Bookmarks.create(url:'http://www.makersacademy.com', title: "Makers")
+
       result = Bookmarks.find(id: bookmark.id)
     
       expect(result).to be_a Bookmarks

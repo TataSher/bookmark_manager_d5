@@ -1,8 +1,10 @@
-require_relative './setup_test_database.rb'
+require './spec/setup_test_database.rb'
+require './lib/database_connection.rb'
 # Set the environment to "test"
+ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
 
-# truncate database before each test
+# drop and re-create database before each test
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
@@ -16,7 +18,6 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require_relative 'web_helper.rb'
 
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = BookmarksManager

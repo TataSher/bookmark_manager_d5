@@ -1,7 +1,8 @@
 require 'pg'
+require './lib/database_connection.rb'
+require 'spec_helper'
 
 def persisted_data(id:)
-  connect = PG.connect(dbname: 'bookmark_manager_test')
-  result = connect.query("SELECT id FROM bookmarks;")
-  result.first
+  result = DatabaseConnection.query("SELECT * FROM bookmarks;")
+  result.first['id']
 end
