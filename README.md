@@ -1,11 +1,13 @@
 # Bookmark_manager
+
 A bookmark manager is a website to maintain a collection of bookmarks (URLs).
 - You can use it to save a webpage you found useful.
 - You can add tags to the webpages you saved to find them later.
 - You can browse bookmarks other users have added.
 - You can comment on the bookmarks.
 
-# User Stories
+## User Stories
+
 As a user
 
 So that I can choose a website
@@ -56,6 +58,9 @@ I would like to delete a bookmark
 - database return updated table
 - app requests feedback from views
 - views send updated list/message
+
+## Domain Model
+![Untitled](https://user-images.githubusercontent.com/77491121/119644899-584d8c80-be15-11eb-829e-1cf536b9da79.png)
 
 ## Setting up test database
 
