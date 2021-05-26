@@ -7,8 +7,11 @@ A bookmark manager is a website to maintain a collection of bookmarks (URLs).
 
 # User Stories
 As a user
+
 So that I can choose a website
+
 I would like to see a list of bookmarks
+
 
 | class     | instances | methods  |
 |-----------|-----------|----------|
@@ -17,14 +20,18 @@ I would like to see a list of bookmarks
 |           |           |          |
 
 As a user
+
 So that I can add a new website
+
 I would like to add a bookmark
+
 
 | class     | responsibilities | colabs   |
 |-----------|------------------|----------|
 |           |                  |          |
 | bookmarks | add-bookmark     |          |
 |           |                  |          |
+
 - post request to app
 - app adds new bookmark to database
 - database return updated table
@@ -32,8 +39,11 @@ I would like to add a bookmark
 - views send updated list/message
 
 As a user
+
 So that i can remove bookmarks from my bookmarks manager
+
 I would like to delete a bookmark
+
 
 | class     | responsibilities | colabs   |
 |-----------|------------------|----------|
@@ -47,21 +57,18 @@ I would like to delete a bookmark
 - app requests feedback from views
 - views send updated list/message
 
-
-
-### To set up the database
-Connect to psql
-Create the database using the psql command CREATE DATABASE bookmark_manager;
-Connect to the database using the pqsl command \c bookmark_manager;
-Run the query we have saved in the file 01_create_bookmarks_table.sql
-
-# Setting up test database
+## Setting up test database
 
 Connect to psql
+
 Create the database using the psql command
-CREATE DATABASE bookmark_manager_test;
+
+> CREATE DATABASE bookmark_manager_test;
+
 Connect to the database using the pqsl command
-\c bookmark_manager_test;
+
+> \c bookmark_manager_test;
+
 Run the query we have saved in the file 01_create_bookmarks_table.sql
 
 **Using TablePlus as GUI to manage databases**
